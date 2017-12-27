@@ -72,8 +72,6 @@ public class UserController implements ServletContextAware {
 
     private static final String FILE_NAME = "用户信息";
 
-    //private static final int ADD_FLAG = 1;
-
     private ServletContext servletContext;
 
     @Override
@@ -161,13 +159,6 @@ public class UserController implements ServletContextAware {
         return "success";
     }
 
-    /*@RequestMapping(value = "/deleteBatchUserDepart", method = RequestMethod.POST)
-    @ResponseBody
-    public String deleteBatchUserDepart(String id) {
-    	userService.deleteBatchUserDepart(id);
-    	return "success";
-    }*/
-
     @ResponseBody
     @RequestMapping(value = "/getUser", method = RequestMethod.GET)
     public UserDO getUser(String id) {
@@ -205,28 +196,6 @@ public class UserController implements ServletContextAware {
         model.put("exportstart", user.getStart());
         return model;
     }
-
-    /*@ResponseBody
-    @RequestMapping(value = "/datalist2", produces = "application/json", method = RequestMethod.GET)
-    public Map<String, Object> datalist2(Integer length, Integer start, String searchstr, String permissionId,
-            HttpServletRequest request, HttpServletResponse response) {
-        Map<String, Object> model = new HashMap<>();
-
-        if (!StringUtil.isEmpty(searchstr)) {
-            searchstr = SpecialCharacherUtils.toMyString(searchstr);
-        }
-
-        long count = userService.countUserList(null, null, searchstr, permissionId);
-
-        List<UserDO> userList = userService.getUserList(start, length, searchstr, permissionId);
-
-        model.put("recordsTotal", count);
-        model.put("recordsFiltered", count);
-        model.put("data", toUsersJson2(userList));
-        model.put("exportlength", length);
-        model.put("exportstart", start);
-        return model;
-    }*/
 
     @ResponseBody
     @RequestMapping(value = "/datalist1", produces = "application/json", method = RequestMethod.GET)

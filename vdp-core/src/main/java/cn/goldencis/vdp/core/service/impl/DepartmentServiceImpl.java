@@ -49,56 +49,6 @@ public class DepartmentServiceImpl extends AbstractBaseServiceImpl<DepartmentDO,
 
     /*
      * (non-Javadoc)
-     * @see cn.goldencis.tsa.system.service.IDepartmentService#getDeptarMentList(java.lang.Integer, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String)
-     */
-    /*	public List<DepartmentDO> getDeptarMentList(Integer startNum, Integer pageSize, Integer pId, String treePath ,String ordercase) {
-    		return cmapper.getDeptarMentList(startNum, pageSize, pId, treePath,ordercase);
-    	}
-    	*/
-    /*
-     * (non-Javadoc)
-     * @see cn.goldencis.tsa.system.service.IDepartmentService#getDeptarMentCount(java.lang.Integer, java.lang.String)
-     */
-    /*	public long getDeptarMentCount(Integer pId, String treePath){
-    		return cmapper.getDeptarMentCount(pId, treePath);
-    	}
-    */
-    /**
-     * 转化成ztree json
-     * @param departments
-     * @param ischeck
-     * @return
-     */
-    /*  private String toTreeJson(List<DepartmentDO> departments,boolean ischeck,boolean isedit){
-    	JSONArray array = new JSONArray();
-    	for (DepartmentDO department : departments) {
-    		JSONObject obj = new JSONObject();
-    		if(isedit&&1==department.getId().intValue()){
-    			obj.put("checkdisable", true);
-    		}
-    		obj.put("id", department.getId());
-    		obj.put("pId", department.getParentId());
-    		obj.put("name", department.getName());
-    		obj.put("iconSkin", "tDepartment");
-    		obj.put("ParentDepartmentId", department.getParentId());
-    		obj.put("open", true);
-    		array.add(obj);
-    	}
-    	if(ischeck){
-    		JSONObject obj = new JSONObject();
-    		obj.put("id", 0);
-    		obj.put("pId", 1);
-    		obj.put("name", "未分组");
-    		obj.put("iconSkin", "tDepartment");
-    		obj.put("ParentDepartmentId", 1);
-    		obj.put("open", true);
-    		array.add(obj);
-    	}
-    	return array.toJSONString();
-    }*/
-
-    /*
-     * (non-Javadoc)
      * @see cn.goldencis.tsa.system.service.IDepartmentService#getManagerNodes()
      */
     public String getManagerNodes() {
@@ -107,8 +57,9 @@ public class DepartmentServiceImpl extends AbstractBaseServiceImpl<DepartmentDO,
     }
 
     /*
-     * (non-Javadoc)
-     * @see cn.goldencis.tsa.system.service.IDepartmentService#getNodesByLogin()
+     * 根据登录用户权限获取部门树json
+     * @param ischeck 是否有未分组
+     * @return
      */
     public String getNodesByLogin() {
 
