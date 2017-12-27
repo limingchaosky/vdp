@@ -1,0 +1,91 @@
+.main_right {
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  bottom: 0px;
+  padding: 10px;
+  overflow: auto;
+  background-color: #EBECED;
+}
+.main_right .row-top {
+  height: 55%;
+  min-height: 400px;
+  min-width: 1100px;
+}
+.main_right .row-top .cell {
+  float: left;
+  height: 100%;
+  background-color: #fff;
+}
+.main_right .row-top .cell:nth-child(1) {
+  width: 390px;
+  padding: 0 40px;
+}
+.main_right .row-top .cell:nth-child(1) .curr-visit-chart-box {
+  height: calc(61% - 0px);
+  background-color: #fff;
+}
+.main_right .row-top .cell:nth-child(1) .curr-visit-chart-box #curr_Visit_Chart {
+  height: 80%;
+}
+.main_right .row-top .cell:nth-child(1) .curr-visit-chart-box .curr_Visit_Number {
+  height: 20%;
+  text-align: center;
+}
+.main_right .row-top .cell:nth-child(1) .curr-visit-chart-box .curr_Visit_Number span {
+  font-size: 16px;
+}
+.main_right .row-top .cell:nth-child(1) .curr-visit-chart-box .curr_Visit_Number .number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #50C892;
+  margin-left: 10px;
+}
+.main_right .row-top .cell:nth-child(1) .serverinfo-chart-box {
+  height: 13%;
+  background-color: #fff;
+}
+.main_right .row-top .cell:nth-child(1) .serverinfo-chart-box .serverinfo-chart-title {
+  overflow: auto;
+}
+.main_right .row-top .cell:nth-child(1) .serverinfo-chart-box .serverinfo-chart-title .serverinfo-chart-name {
+  float: left;
+}
+.main_right .row-top .cell:nth-child(1) .serverinfo-chart-box .serverinfo-chart-title .serverinfo-chart-value {
+  float: right;
+  font-weight: bold;
+  font-size: 14px;
+}
+.main_right .row-top .cell:nth-child(2) {
+  width: calc(100% - 880px);
+  margin: 0 10px;
+}
+.main_right .row-top .cell:nth-child(3) {
+  width: 470px;
+}
+.main_right .row-bottom {
+  height: 45%;
+  min-height: 280px;
+  padding-top: 10px;
+  min-width: 1100px;
+}
+.main_right .row-bottom .cell {
+  height: 100%;
+  background-color: #fff;
+}
+.cell .section-title {
+  line-height: 40px;
+  text-indent: 10px;
+}
+#serverinfo_cpu_chart,
+#serverinfo_mysql_chart,
+#serverinfo_mem_chart {
+  height: 20px;
+}
+#vedio_export,
+#potent_risk {
+  height: calc(100% - 40px);
+}
+#data_export {
+  height: 100%;
+}

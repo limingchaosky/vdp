@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.goldencis.vdp.core.dao.CUserDepartmentDOMapper">
+  <insert id="insertBatch">
+    insert into t_user_department (department_id,user_id)
+    values
+    <foreach collection="list" item="item" index="index"
+      separator=",">
+      (#{departmentId},#{item})
+    </foreach>
+  </insert>
+  <delete id="deleteBatch" parameterType="java.util.List">
+    delete from t_user_department where user_id in
+    <if test="list != null and list.size>0 ">
+      <foreach collection="list" index="index" item="item" open="("
+        separator="," close=")">
+        #{item}
+      </foreach>
+    </if>
+    <if test="departmentId != null">
+      and department_id = #{departmentId}
+    </if>
+  </delete>
+  <select id="selectUserListByDepartment"
+    parameterType="cn.goldencis.vdp.core.entity.UserDepartmentDO"
+    resultType="cn.goldencis.vdp.core.entity.UserDO">
+    SELECT FIRST_ first, ID_ id FROM t_user_department tud
+    LEFT JOIN ACT_ID_USER aiu ON tud.user_id=aiu.ID_
+    where aiu.status = 1
+    and tud.department_id = #{departmentId} and
+    tud.user_id &lt;&gt;
+    #{userId}
+  </select>
+</mapper>

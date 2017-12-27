@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.goldencis.vdp.core.dao.CustomizedMapper">
+
+  <select id="countUserList" resultType="java.lang.Long">
+    SELECT count(*) FROM ACT_ID_USER d
+    <if test="type=='permission'">
+      LEFT JOIN t_permission p
+      ON d.role_type = p.id
+    </if>
+    <if test="type=='department'">
+      LEFT JOIN t_user_department td
+      ON td.user_id=d.ID_
+    </if>
+    <if test="type=='group'">
+      LEFT JOIN ACT_ID_MEMBERSHIP ug
+      ON ug.USER_ID_ = d.ID_
+    </if>
+    WHERE d.id_ &lt;&gt; '-1'
+    and d.status = '1'
+    <if test='searchstr != null'>
+      AND (
+      d.FIRST_ like CONCAT('%',#{searchstr},'%') escape
+      '*' or d.user_name
+      like
+      CONCAT('%',#{searchstr},'%') escape '*'
+      )
+    </if>
+    <if test="type=='department'">
+      and td.department_id=#{value}
+    </if>
+    <if test="type=='permission'">
+      and d.role_type=#{value}
+    </if>
+    <if test="type=='group'">
+      and ug.group_id_=#{value}
+    </if>
+    <if test='permissionId != null and permissionId != ""'>
+      AND d.role_type=#{permissionId}
+    </if>
+  </select>
+
+
+  <select id="getUserList" resultType="cn.goldencis.vdp.core.entity.UserDO">
+    SELECT
+    DISTINCT(d.ID_) id,
+    FIRST_ FIRST,
+    EMAIL_ email,
+    PWD_ pwd,
+    user_name username,
+    d.department,
+    (SELECT
+    GROUP_CONCAT(rp.`name`)
+    FROM
+    t_user_department ud
+    LEFT JOIN
+    t_department rp
+    ON ud.department_id = rp.id
+    WHERE ud.user_id
+    = d.ID_)
+    AS departmentNames,
+    (SELECT
+    GROUP_CONCAT(gp.NAME_)
+    FROM
+    ACT_ID_MEMBERSHIP gd
+    LEFT JOIN ACT_ID_GROUP gp
+    ON gd.GROUP_ID_ =
+    gp.id_
+    WHERE gd.USER_ID_ = d.ID_) AS groupNames,
+    role_type roleType,
+    p.name roleTypeName,
+    phone,
+    status
+    FROM
+    ACT_ID_USER d
+    LEFT JOIN
+    t_permission p
+    ON d.role_type = p.id
+    WHERE d.id_ &lt;&gt; '-1'
+    and d.status = '1'
+    <if test='searchstr != null'>
+      AND (d.FIRST_ like CONCAT('%',#{searchstr},'%') escape
+      '*' or d.user_name
+      like
+      CONCAT('%',#{searchstr},'%') escape '*')
+    </if>
+    <if test='permissionId != null and permissionId != ""'>
+      AND role_type=#{permissionId}
+    </if>
+    order by user_name
+    <if test='startNum != null and pageSize != null'>
+      limit ${startNum},${pageSize}
+    </if>
+  </select>
+  <select id="getAllUser" resultType="cn.goldencis.vdp.core.entity.UserDO">
+    SELECT
+    DISTINCT(d.ID_) id,
+    FIRST_ FIRST,
+    EMAIL_ email,
+    PWD_ pwd,
+    user_name username,
+    d. department,
+    (SELECT
+    GROUP_CONCAT(rp.`name`)
+    FROM
+    t_user_department ud
+    LEFT JOIN
+    t_department rp
+    ON ud.department_id
+    = rp.id
+    WHERE ud.user_id = d.ID_)
+    AS departmentNames,
+    (SELECT
+    GROUP_CONCAT(gp.NAME_)
+    FROM
+    ACT_ID_MEMBERSHIP gd
+    LEFT JOIN ACT_ID_GROUP
+    gp
+    ON gd.GROUP_ID_ = gp.id_
+    WHERE gd.USER_ID_ = d.ID_) AS groupNames,
+    role_type roleType,
+    p.name
+    roleTypeName,
+    phone
+    FROM
+    ACT_ID_USER d
+    LEFT
+    JOIN t_permission p
+    ON
+    d.role_type = p.id
+    where d.status = '1'
+  </select>
+  <select id="getUserListByType" resultType="cn.goldencis.vdp.core.entity.UserDO">
+    SELECT
+    DISTINCT ID_ id,
+    FIRST_ FIRST,
+    EMAIL_ email,
+    PWD_ pwd,
+    user_name username,
+    d.department,
+    (SELECT
+    GROUP_CONCAT(rp.`name`)
+    FROM
+    t_user_department ud
+    LEFT JOIN t_department rp
+    ON ud.department_id = rp.id
+    WHERE ud.user_id
+    = d.ID_) AS departmentNames,
+    (SELECT
+    GROUP_CONCAT(gp.NAME_)
+    FROM
+    ACT_ID_MEMBERSHIP gd
+    LEFT JOIN ACT_ID_GROUP gp
+    ON gd.GROUP_ID_ =
+    gp.id_
+    WHERE gd.USER_ID_ = d.ID_) AS groupNames,
+    role_type roleType,
+    p.name roleTypeName,
+    phone
+    FROM
+    ACT_ID_USER d
+    LEFT JOIN t_permission p
+    ON d.role_type = p.id
+    LEFT JOIN t_user_department td
+    ON
+    td.user_id=d.ID_
+    LEFT JOIN ACT_ID_MEMBERSHIP ug
+    ON ug.USER_ID_ = d.ID_
+    WHERE d.id_ &lt;&gt; '-1'
+    and d.status = '1'
+    <if test='searchstr != null'>
+      AND (d.id_ like CONCAT('%',#{searchstr},'%') or d.user_name
+      like
+      CONCAT('%',#{searchstr},'%') )
+    </if>
+    <if test='status != null and status != ""'>
+      AND d.status=#{status}
+    </if>
+    <if test="type=='department'">
+      and td.department_id=#{value}
+    </if>
+    <if test="type=='permission'">
+      and d.role_type=#{value}
+    </if>
+    <if test="type=='group'">
+      and ug.group_id_=#{value}
+    </if>
+    order by user_name
+    <if test='startNum != null and pageSize != null'>
+      limit ${startNum},${pageSize}
+    </if>
+  </select>
+
+  <select id="selectCountByUserName" resultType="int"
+    parameterType="String">
+    SELECT
+    count(*)
+    FROM
+    ACT_ID_USER
+    where user_name=#{username}
+    and status = '1'
+  </select>
+
+  <update id="updateByBatchUser" parameterType="java.util.List">
+    update ACT_ID_USER set status=0,role_type = -1 where id_ in
+    <foreach collection="list" index="index" item="item" open="("
+      separator="," close=")">
+      #{item}
+    </foreach>
+  </update>
+  <delete id="deleteBatchUserDepart">
+    delete from t_user_department where user_id in
+    <foreach collection="list" index="index" item="item" open="("
+      separator="," close=")">
+      #{item}
+    </foreach>
+    <if test="departmentId != null">
+      and department_id = #{departmentId}
+    </if>
+  </delete>
+  <delete id="deleteBatchUserGroup" parameterType="java.util.List">
+    delete from ACT_ID_MEMBERSHIP where USER_ID_ in
+    <foreach collection="list" index="index" item="item" open="("
+      separator="," close=")">
+      #{item}
+    </foreach>
+  </delete>
+
+
+  <select id="getUserListByName" resultType="cn.goldencis.vdp.core.entity.UserDO">
+    SELECT
+    DISTINCT(d.ID_) id,
+    d.FIRST_ FIRST,
+    d.EMAIL_ email,
+    d.PWD_ pwd,
+    user_name username,
+    d. department,
+    (SELECT
+    GROUP_CONCAT(rp.`name`)
+    FROM
+    t_user_department ud
+    LEFT JOIN
+    t_department rp
+    ON ud.department_id = rp.id
+    WHERE ud.user_id
+    = d.ID_)
+    AS departmentNames,
+    (SELECT
+    GROUP_CONCAT(gp.NAME_)
+    FROM
+    ACT_ID_MEMBERSHIP gd
+    LEFT JOIN ACT_ID_GROUP gp
+    ON gd.GROUP_ID_ =
+    gp.id_
+    WHERE gd.USER_ID_ = d.ID_) AS groupNames,
+    d.role_type roleType,
+    p.name roleTypeName,
+    d.phone,
+    d.status
+    FROM
+    ACT_ID_USER d
+    LEFT JOIN
+    t_permission p
+    ON d.role_type = p.id
+    LEFT JOIN t_user_department tud
+    ON tud.user_id = d.ID_
+    LEFT JOIN t_department td ON td.id =
+    tud.department_id
+    WHERE d.id_ &lt;&gt; '-1'
+    and d.status = '1'
+    <if test='searchstr != null'>
+      AND (d.FIRST_ like CONCAT('%',#{searchstr},'%') escape
+      "*" or d.user_name
+      like
+      CONCAT('%',#{searchstr},'%') escape "*"
+      or td.name
+      like
+      CONCAT('%',#{searchstr},'%') escape "*")
+    </if>
+    <if test='permissionId != null and permissionId != ""'>
+      AND role_type=#{permissionId}
+    </if>
+    order by user_name
+    <if test='startNum != null and pageSize != null'>
+      limit #{startNum},#{pageSize}
+    </if>
+  </select>
+
+  <delete id="deleteByBatchUser" parameterType="java.util.List">
+    delete from ACT_ID_USER where ID_ in
+    <foreach collection="list" index="index" item="item" open="("
+      separator="," close=")">
+      #{item}
+    </foreach>
+    and status &lt;&gt; 2
+  </delete>
+
+
+  <select id="getFunctionNodesByLogin" resultType="cn.goldencis.vdp.core.entity.DepartmentDO">
+    <foreach collection="list" index="index" item="item" open=""
+      separator="UNION" close="">
+      SELECT d.id,
+      d.name,
+      d.parent_id AS parentId,
+      d.ip_part AS ipPart,
+      d.tree_path AS treePath,
+      d.owner,
+      d.department_tel AS departmentTel FROM t_department d WHERE
+      FIND_IN_SET(id,getParentList(#{item.id}))OR tree_path LIKE
+      #{item.treePath}
+    </foreach>
+  </select>
+</mapper>

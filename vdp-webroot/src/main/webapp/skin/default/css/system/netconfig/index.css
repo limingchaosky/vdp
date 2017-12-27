@@ -1,0 +1,377 @@
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+}
+
+.aboutmain {
+    background: #ffffff;
+    height: 100%;
+    width: 98.50%;
+    margin-left: 10px;
+    overflow: auto;
+}
+
+.aboutmain .main {
+    margin-left: 65px;
+}
+
+.logoabout {
+    margin-left: 35px;
+    padding-top: 25px;
+}
+
+.tsaedition {
+    color: #566783;
+    font-size: 14px;
+    margin: 30px 0;
+    font-family: arial;
+}
+
+.system {
+    color: #566783;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.all {
+    line-height: 40px;
+}
+
+.all p {
+    color: #727274;
+    font-size: 14px;
+}
+
+.all p .lianjie {
+    color: #727274;
+    font-size: 14px;
+}
+
+.all p .lianjie:hover {
+    color: #333;
+    font-size: 16px;
+}
+
+.all .name {
+    float: left;
+    margin-right: 25px;
+}
+
+.address {
+    float: left;
+    margin-right: 20px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+    font-size: 14px;
+}
+
+.marginl-10 {
+    margin-left: 10px;
+}
+
+.marginl-20 {
+    margin-left: 20px;
+}
+
+.marginl-30 {
+    margin-left: 30px;
+}
+
+.marginl-50 {
+    margin-left: 50px;
+}
+
+.marginl-60 {
+    margin-left: 65px !important;
+}
+
+.padding-l-0 {
+    padding-left: 0;
+}
+
+.padding-l-20 {
+    padding-left: 20px;
+}
+
+.padding-l-10 {
+    padding-left: 10px;
+}
+
+.padding-l-r-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.padding-l-r-8 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.padding-r-0 {
+    padding-right: 0;
+}
+
+.padding-t-50 {
+    padding-top: 50px;
+}
+
+.margin-b-30 {
+    margin-bottom: 30px;
+}
+
+.margin-t-b-30 {
+    margin: 30px 0;
+}
+
+.margint-15 {
+    margin-top: 15px;
+}
+
+.margint-1-up {
+    margin-top: -10px;
+}
+
+.margint-10 {
+    margin-top: 10px;
+}
+
+.margintl-15 {
+    margin-top: 15px;
+    margin-left: 100px;
+}
+
+.marginl-15 {
+    margin-left: 15px;
+}
+
+.marginl-30 {
+    margin-left: 30px;
+}
+
+.marginb-20 {
+    margin-bottom: 20px;
+}
+
+.margint-20 {
+    margin-top: 20px !important;
+}
+
+.margint-40 {
+    margin-top: 40px !important;
+}
+
+.margint-60 {
+    margin-top: 60px !important;
+}
+
+.margint-50 {
+    margin-top: 50px;
+}
+
+.paddingt-60 {
+    padding-top: 60px;
+}
+
+.marginb-10 {
+    margin-bottom: 10px;
+}
+
+.margint-0 {
+    margin-top: 0 !important;
+}
+
+.margin-t-b-0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.margint-8 {
+    margin-top: 8px;
+}
+
+.margint-5 {
+    margin-top: 5px;
+}
+
+.marg-l-13 {
+    margin-left: -13px;
+}
+
+.margin-r-4 {
+    margin-right: 10px;
+}
+
+.margin-r-20 {
+    margin-right: 20px;
+}
+
+.marginl-50 {
+    margin-left: 50px !important;
+}
+
+
+/*字数代表宽度，+在这基础上加34*/
+
+.width-text-2 {
+    width: 48px !important;
+}
+
+.width-text-3 {
+    width: 62px !important;
+}
+
+.width-text-4 {
+    width: 76px !important;
+}
+
+.width-text-5 {
+    width: 90px !important;
+}
+
+.width-text-6 {
+    width: 104px !important;
+}
+
+.width-text-7 {
+    width: 118px !important;
+}
+
+.width-text-8 {
+    width: 132px !important;
+}
+
+.width-text-9 {
+    width: 146px !important;
+}
+
+.width-text-10 {
+    width: 150px !important;
+}
+
+
+/*网络配置*/
+
+.netset {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.netset .netsetleft {
+    height: 230px;
+    background-color: #F5F5F5;
+    margin-left: 50px;
+    margin-top: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.ethsa {
+    height: 40px;
+    text-align: left;
+    line-height: 40px;
+    background: #E5E6E8;
+}
+
+.netset .netsetright {
+    height: 230px;
+    background-color: #F5F5F5;
+    margin-left: 50px;
+    margin-top: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.netset span {
+    text-align: center;
+    font-size: 14px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    color: #A2A2A2;
+}
+
+.netsetlast {
+    margin-left: 200px;
+}
+
+.netsetlast .preserve-1 {
+    height: 32px;
+    width: 70px;
+    background: #5CAEDE;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    line-height: 32px;
+}
+
+@media screen and (max-width:1366px) {
+    .boxnet {
+        height: 600px;
+        overflow-y: auto;
+    }
+}
+
+.left-netconfig {
+    float: right;
+    margin-right: 48px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.neter-icon {
+    color: #5BAFDE;
+    padding-right: 5px;
+}
+
+.ethsa {
+    font-weight: bold;
+    color: #666666;
+    font-size: 16px;
+    font-family: arial;
+}
+
+.viewbtn {
+    color: #333 !important;
+}
+
+label {
+    line-height: 30px;
+    font-size: 12px;
+    color: red;
+    margin-left: 10px;
+}
+
+.boxnet {
+    overflow: auto;
+}
+
+.btn-save {
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    padding: 0 20px;
+    color: white;
+    background: #8DB4E5;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    margin-left: 64px;
+}
+
+.btn-save:hover {
+    background: #78a6e0;
+}

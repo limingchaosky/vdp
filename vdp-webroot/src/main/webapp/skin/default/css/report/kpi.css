@@ -1,0 +1,91 @@
+.main-box{
+    height: calc(100% - 92px);
+    overflow-y: auto;
+    background-color:#eee;
+}
+.trend-lines{
+    height: 420px;
+    width: 100%;
+    background-color: #fff;
+}
+.trend-lines #trendbox{
+    height:100%;
+    width:100%;
+}
+.main-statisticsbox{
+    margin-top: 10px;
+    height: 360px;
+    background-color:#fff;
+    margin-bottom:10px;
+}
+.main-statisticsbox .numecharsleft{
+    height: 100%;
+    width: 35%;
+    float:left;
+}
+.main-statisticsbox .numecharsleft .lefttitle{
+    height: 40px;
+    line-height: 40px;
+    color: #333;
+    font-weight: bold;
+    text-indent:30px;
+}
+.main-statisticsbox .numecharsleft #numecharsleft{
+    height: 320px;
+    width: 100%;
+}
+.main-statisticsbox .qualityright{
+    height: 100%;
+    float:left;
+    border-left: 10px solid #EEEEEE;
+    width: calc(100% - 35%);
+}
+.main-statisticsbox .qualityright #qualityright{
+    height: 100%;
+    width: 100%;
+}
+.content-box{
+    position: static;
+    min-height:120px;
+    margin-bottom:15px;
+}
+.dataTables_wrapper{
+    position:static;
+    height:100%
+}
+.wind-content .wind-content-input-date {
+    background-image: url(../../images/calendar.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 25px;
+    cursor: pointer;
+}
+.daterangepicker{
+    margin-right: 25px;
+    margin-top:2px;
+}
+.dropdown-input{
+	cursor:pointer;
+}
+.ratebox{
+    height: 4px;
+    width: 60%;
+    margin-left:20px;
+    border-radius: 2px;
+    background-color:#ccc;
+    float: left;
+    margin-top: 8px;
+   
+}
+.ratebox .rateboxin{
+    height: 100%;
+    border-radius: 2px;
+    background-color: #10D0C8;
+}
+.ratespan{
+	float:left;
+    margin-left: 10px;
+}
+.bar-item-box .bar-item-search input[type="text"]{
+	width:200px;
+}

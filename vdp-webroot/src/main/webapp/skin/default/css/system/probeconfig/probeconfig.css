@@ -1,0 +1,341 @@
+/* ==========================================================================
+    鎺㈤拡 fuqiang
+   ========================================================================== */
+/*鍏ㄥ眬瀛椾綋*************************/
+.main_right {
+  font-size: 14px;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    width:32px;
+    font-size:15px;
+}
+.layui-layer-btn .layui-layer-btn1 {
+    width:32px;
+    font-size:15px;
+}
+/**********************************/
+/*鏍囬閮ㄥ垎*************************/
+#inlefttree {
+  width: 280px;
+}
+#inright {
+  left: 280px;
+  border-left: none;
+}
+#inlefttreetitle {
+  line-height: 45px;
+  font-size: 0;
+  background-color: #E2E5EC;
+  position: relative;
+  border-right: 1px solid #eee;
+  box-sizing: border-box;
+}
+.blueline {
+  display: inline-block;
+  background-color: #48A3D8;
+  height: 12px;
+  width: 2px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+.access {
+  vertical-align: middle;
+  font-size: 14px;
+  margin-left: 10px;
+  line-height: 44px;
+}
+.add {
+  display: inline-block;
+  float: right;
+}
+.icon-addserver {
+  display: inline-block;
+  color: #10C7BE;
+  font-size: 20px !important;
+  height: 45px;
+  width: 30px;
+  text-align: center;
+}
+/**********************************/
+/*宸︿晶鍒楄〃*************************/
+#inlefttreecontent {
+  padding-left: 0;
+  position: absolute;
+  left: 0;
+  top: 45px;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.tree_content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #EEF1F6;
+}
+.tree-list {
+  height: 100%;
+  overflow-y: auto;
+}
+.tree-list a {
+  color: #818E9F;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 30px;
+  white-space: nowrap;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 60px;
+  background-position: 30px center;
+  background-repeat: no-repeat;
+  background-image: url(../../../images/device/icon-offline.png);
+  position: relative;
+}
+.tree-list a:hover {
+  background-color: #E8EDF3;
+}
+.tree-list a:hover .del {
+  display: inline-block;
+}
+.tree-list .online {
+  background-image: url(../../../images/device/icon-online.png);
+  color: #10C7BE;
+}
+.tree-list .active {
+  background-color: white !important;
+}
+.tree-list .del {
+  display: none;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 0;
+  color: #818E9F;
+  text-align: center;
+  font-size: 14px;
+}
+.tree-list .del:hover {
+  color: #10C7BE;
+}
+/**********************************/
+/*鍙充晶鍐呭鍖�********************/
+.right-header {
+  height: 45px;
+  line-height: 45px;
+}
+#inright-content {
+  height: 100%;
+}
+.main-header {
+  background-color: #E2E5EC;
+  padding: 0 20px;
+}
+.config,
+.edit {
+  display: inline-block;
+  height: 45px;
+  color: #8C8C8E;
+  font-size: 14px;
+  font-weight: normal;
+  float: right;
+}
+.config .iconfont,
+.edit .iconfont {
+  margin-right: 5px;
+  color: #5BADDD;
+  font-size: 14px;
+}
+.config .icon-bianji1,
+.edit .icon-bianji1 {
+  font-size: 18px;
+}
+.sub-header {
+  background-color: #F9FAFC;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+.sub-content {
+  padding: 10px 0;
+}
+.sub-content .open {
+  color: #5BADDD;
+}
+.icon-fanghu {
+  color: #959595;
+}
+.param {
+  min-height: 30px;
+  padding-right: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.param-name {
+  display: inline-block;
+  float: left;
+  width: 200px;
+  text-align: right;
+  color: #959595;
+}
+.param-value {
+  margin-left: 210px;
+  color: #333333;
+}
+.val-item {
+  margin-right: 10px;
+  white-space: nowrap;
+  display: inline-block;
+  height: 20px;
+}
+/**********************************/
+/*寮圭獥*****************************/
+.tanzhenadd{
+  margin-right: 10px;
+}
+.add-server-box {
+  padding: 10px 0;
+}
+.row {
+  padding: 5px 10px;
+  font-size: 14px;
+  min-height: 30px;
+  line-height: 30px;
+}
+.row .icon-add {
+  text-align: center;
+  cursor: pointer;
+  background-color: #F3F7F8;
+  vertical-align: middle;
+  font-size: 20px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  color: #b9c0ca;
+  line-height:30px;
+}
+.row .icon-add:hover {
+  color: #10C7BE;
+}
+.row .icon-add:before {
+  display: inline-block;
+  margin-top: -4px;
+}
+#openWind .icon-tianjia {
+  color: #929294;
+}
+#openWind .icon-tianjia:hover {
+  color: #10C7BE;
+}
+.add-param-name {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  float: left;
+  vertical-align: middle;
+}
+.add-param-val {
+  margin-left: 10px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #E1E6EA;
+  padding: 0 10px;
+  vertical-align: middle;
+}
+.long-input {
+  width: 360px;
+}
+.medium-input {
+  width: 220px;
+}
+.short-input {
+  width: 120px;
+}
+.append-box {
+  margin-left: 120px;
+}
+.append-param-box {
+  display: inline-block;
+  position: relative;
+}
+.append {
+  border: none;
+  background-color: #F5F5F7;
+  margin-top: 10px;
+  color: #929294;
+}
+.del-param {
+  position: absolute;
+  right: 5px;
+  z-index: 10;
+  top: 11px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #b9c0ca;
+}
+.del-param:hover {
+  color: #10C7BE;
+}
+.must:before {
+  content: '*';
+  display: inline-block;
+  height: 26px;
+  vertical-align: middle;
+  color: red;
+  font-size: 18px;
+  margin-right: 5px;
+}
+label.error {
+  color: red;
+  margin-left: 5px;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.layer-bottom-line {
+  border-bottom: 1px solid #DDDDDD;
+}
+.layui-layer-btn {
+  text-align: right !important;
+}
+.layui-layer-btn0,
+.layui-layer-btn1 {
+  text-align: center;
+  width: 64px;
+}
+.error-text {
+  color: red;
+  display: none;
+  font-size: 12px;
+}
+.icon-yiwen {
+  color: #D3DBDE;
+  font-size: 18px;
+  margin-left: 3px;
+  vertical-align: middle;
+  cursor: help;
+}
+.icon-yiwen:hover {
+  color: #10C7BE;
+}
+/**********************************/
+.row-center {
+  display: inline-block;
+  padding: 5px 0;
+  margin-left: 10px;
+}
+/**********************************/
+/*甯哥敤鍗曚釜灞炴�*********************/
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.none {
+  display: none;
+}
+.bar-item-box .bar-item:last-child{
+	margin-right:0;
+}

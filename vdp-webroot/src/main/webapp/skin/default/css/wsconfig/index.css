@@ -1,0 +1,25 @@
+.main-right {
+  font-size: 14px;
+}
+#main_form {
+  height: calc(100% - 91px);
+  overflow: auto;
+}
+.row {
+  padding: 10px;
+}
+.row .label-name {
+  text-align: right;
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.row input {
+  width: 300px;
+  vertical-align: middle;
+}
+.bottom {
+  border-top: 1px solid #E7E7E7;
+  padding: 30px;
+}

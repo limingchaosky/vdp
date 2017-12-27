@@ -1,0 +1,109 @@
+body .layui-layer-page.layui-layer-page .layui-layer-content {
+    border-bottom: 0;
+}
+
+.switch-btn {
+    display: inline-block;
+    width: 65px;
+    height: 40px;
+    margin-top: -15px;
+}
+
+.enterbup {
+    height: 30px;
+    padding: 35px 0 0 38px;
+}
+
+.enterbup .handbox {
+    float: left;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.enterbup .handtext {
+    float: left;
+    width: 210px;
+}
+
+.autoenter {
+    height: 30px;
+    margin: 0px 20px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 38px;
+    padding-left: 32px;
+}
+
+.autoenter .startauto {
+    font-size: 14px;
+    float: left;
+    margin-top: -6px;
+    margin-right: 5px;
+}
+
+.autoenter .row-center {
+    float: left;
+}
+
+.copybox {
+    padding-left: 50px;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+.copybox .copyselect {
+    width: 180px;
+}
+
+.copybox .autoselect {
+    margin-top: 15px;
+}
+
+.beauty-radio input[type="radio"] {
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 1px;
+    z-index: 10;
+    width: 80px;
+    height: 18px;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#bar_export_database .expert-box {
+    position: absolute;
+    left: -85px;
+    box-shadow: 0 2px 0 #ccc;
+}
+
+#bar_export_database .expert-box div.exportsan {
+    height: 10px;
+    width: 132px;
+    background: url(../../../images/triangle.png) no-repeat right;
+}
+
+#bar_export_database .expert-box li {
+    height: 40px;
+    width: 132px;
+    line-height: 40px;
+    color: #333;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 2px 0 0 #ccc;
+    text-align: left;
+    text-indent: 15px;
+}
+
+#bar_export_database .expert-box li:hover {
+    color: #fff;
+    background-color: #10C7BE;
+}
+
+.beauty-radio .beauty-radio-label {
+    top: -10px;
+}

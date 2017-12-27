@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.goldencis.vdp.core.dao.CGroupDOMapper">
+
+  <select id="selectGroupCount" resultType="java.lang.Integer"
+    parameterType="java.lang.String">
+    SELECT COUNT(*) FROM ACT_ID_GROUP
+    <if test="name != null">
+      where Name_ = #{name}
+    </if>
+  </select>
+  <select id="selectGroupMax" resultType="java.lang.Integer"
+    parameterType="java.lang.String">
+    SELECT NEXTVAL('GroupSeq')
+  </select>
+  <select id="selectList" resultType="cn.goldencis.vdp.core.entity.GroupDO"
+    parameterType="java.lang.String">
+    SELECT ID_ id,name_ NAME ,remark,(SELECT COUNT(*) FROM
+    ACT_ID_MEMBERSHIP d
+    WHERE d.group_id_=t.ID_) count FROM ACT_ID_GROUP
+    t ORDER BY CONVERT(ID_,SIGNED)
+  </select>
+  <select id="selectEqOnePerGroupByUserId" resultType="cn.goldencis.vdp.core.entity.GroupDO">
+    SELECT
+      t1.NAME_ name
+    FROM
+      ACT_ID_MEMBERSHIP t
+      LEFT JOIN ACT_ID_GROUP t1 ON t.GROUP_ID_=t1.ID_
+    WHERE group_id_ IN
+      ( SELECT group_id FROM (SELECT
+        COUNT(*) cnt,
+        group_id_ group_id
+      FROM
+        ACT_ID_MEMBERSHIP
+      GROUP BY group_id_
+      HAVING cnt = 1)t)
+      AND user_id_=#{userId}
+  </select>
+
+  <select id="selectGroupListByUserId" resultType="cn.goldencis.vdp.core.entity.GroupDO">
+
+    SELECT t1.NAME_ name FROM ACT_ID_MEMBERSHIP t
+    LEFT JOIN ACT_ID_GROUP t1 ON t.GROUP_ID_=t1.ID_
+    WHERE user_id_ = #{userId}
+    GROUP BY group_id_
+  </select>
+</mapper>

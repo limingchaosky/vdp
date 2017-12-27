@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.goldencis.vdp.core.dao.CDepartmentDOMapper">
+  <select id="selectNoParentDepartment" resultType="cn.goldencis.vdp.core.entity.DepartmentDO">
+    SELECT
+    t.id,t.name FROM t_department t
+    LEFT JOIN t_department d ON
+    t.id=d.parent_id
+    WHERE d.parent_id IS NULL
+  </select>
+</mapper>

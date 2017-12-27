@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-4.1.xsd">
+
+	<!-- 配置不过滤的资源（静态资源） -->
+	<http pattern="/js/*.js" security="none" />
+	<http pattern="/js/*/*.js" security="none" />
+	<http pattern="/js/*/*/*.js" security="none" />
+	<http pattern="/js/*/*/*/*.*" security="none" />
+	<http pattern="/skin/*/css/*.css" security="none" />
+	<http pattern="/skin/*/css/*/*.css" security="none" />
+	<http pattern="/skin/*/css/*/*/*.css" security="none" />
+	<http pattern="/skin/*/images/*.*" security="none" />
+	<http pattern="/skin/*/images/*/*.*" security="none" />
+
+	<http pattern="/webservice*" security="none" />
+	<http pattern="/webservice/*" security="none" />
+	<http pattern="/commontools/*.jsp" security="none" />
+	<http pattern="/topoImgs/*.png" security="none" />
+	<http pattern="/event/send" security="none" />
+
+	<http pattern="/download/*/*.*" security="none" />
+
+	<!-- <http pattern="/system/import/import" security="none"></http> <http
+		pattern="/system/import/importdevice" security="none"></http> -->
+	<http pattern="/ueditor/config*" security="none" />
+	<http pattern="/user/getPlatformAccount" security="none" />
+	<http pattern="/system/resetPhoto" security="none" />
+	<http pattern="/service/model/*/save" security="none" />
+	<http pattern="/activitiFlow/queryAllTaskListenerDefinition"
+		security="none" />
+
+	<http pattern="/user/queryPlatformAccount" security="none" />
+	<http pattern="/user/validatOmsUser" security="none" />
+
+	<http pattern="/openprocess/queryAllOpenProcess" security="none" />
+	<http pattern="/diagram-viewer-out/*" security="none" />
+	<http pattern="/diagram-viewer-out/*/*" security="none" />
+	<http pattern="/diagram-viewer-out/*/*/*" security="none" />
+	<http pattern="/diagram-viewer-out/*/*/*/*" security="none" />
+	<http pattern="/activitiFlow/getDiagramHighlights/*" security="none" />
+	<http pattern="/activitiFlow/getDiagram/*" security="none" />
+
+	<http pattern="/mobile/*" security="none" />
+	<http pattern="/mobile/*/*" security="none" />
+
+
+	<http pattern="/activitiFlow/uploadBpmnFile" security="none" />
+	<!-- 不过滤验证码 -->
+	<http pattern="/getCode" security="none" />
+
+
+	<http pattern="/logout" create-session="never" auto-config="true">
+		<anonymous enabled="false" />
+		<intercept-url pattern="/logout" method="POST" />
+		<csrf disabled="true" />
+	</http>
+
+	<http auto-config="true">
+		<headers defaults-disabled="true">
+			<cache-control />
+		</headers>
+		<intercept-url pattern="/login**"
+			access="isAnonymous() or hasRole('ROLE_USER') " />
+		<!-- <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+			<intercept-url pattern="/audit**" access="hasRole('ROLE_AUDIT')" /> <intercept-url
+			pattern="/deleteLogs" access="hasRole('ROLE_AUDIT')" /> <intercept-url pattern="/clearAllLogs"
+			access="hasRole('ROLE_AUDIT')" /> <intercept-url pattern="/exportLogs" access="hasRole('ROLE_AUDIT')"
+			/> <intercept-url pattern="/monitor/doDownloadFile**" access="hasRole('ROLE_AUDIT')
+			or hasRole('ROLE_USER') or hasRole('ROLE_OPERATOR') or hasRole('ROLE_ADMIN')"
+			/> -->
+		<intercept-url pattern="/**" access="hasRole('ROLE_USER')  " />
+		<form-login login-page="/login"
+			authentication-success-handler-ref="authenticationSuccessHandler"
+			authentication-failure-url="/login?error=ture" username-parameter="username"
+			password-parameter="password" />
+		<custom-filter ref="csrfTokenFilter" after="CSRF_FILTER" />
+	</http>
+
+	<beans:bean id="csrfTokenFilter"
+		class="cn.goldencis.vdp.common.filter.CsrfTokenFilter" />
+
+	<!-- 自定义user-service -->
+	<beans:bean id="userDetailService"
+		class="cn.goldencis.vdp.core.override.UserDetailServiceImpl" />
+
+	<beans:bean id="authenticationSuccessHandler"
+		class="cn.goldencis.vdp.core.override.AuthenticationSuccessHandlerImpl" />
+
+	<beans:bean id="passwordEncoder"
+		class="cn.goldencis.vdp.core.override.PasswordEncoderImpl" />
+
+	<!-- <beans:bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+		<beans:property name="userPropertyToUse" value="salt" /> </beans:bean> -->
+
+	<beans:bean id="authenticationProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<beans:property name="hideUserNotFoundExceptions"
+			value="false" />
+		<beans:property name="userDetailsService" ref="userDetailService" />
+		<beans:property name="passwordEncoder" ref="passwordEncoder" />
+		<!-- <beans:property name="saltSource" ref="saltSource" /> -->
+	</beans:bean>
+
+	<!-- 自定义权限管理，使用自己的user-service -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="authenticationProvider" />
+	</authentication-manager>
+</beans:beans>

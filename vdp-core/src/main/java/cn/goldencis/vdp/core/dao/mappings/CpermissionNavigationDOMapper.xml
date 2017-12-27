@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.goldencis.vdp.core.dao.CPermissionNavigationDOMapper">
+  <insert id="insertBatch"
+    parameterType="cn.goldencis.vdp.core.entity.PermissionNavigationDO">
+    insert into t_permission_navigation (permission_id, navigation_id)
+    values
+    <foreach collection="list" item="item" index="index"
+      separator=",">
+      (#{item.permissionId},#{item.navigationId})
+    </foreach>
+  </insert>
+
+  <select id="selectList"
+    resultType="cn.goldencis.vdp.core.entity.PermissionNavigationDO">
+    select permission_id permissionId, navigation_id
+    navigationId from
+    t_permission_navigation where
+    permission_id=#{permissionId}
+  </select>
+
+  <delete id="deleteBatch" parameterType="java.util.List">
+    delete from t_permission_navigation
+    <where>
+      <if test="list != null and list.size>0 ">
+        permission_id in
+        <foreach collection="list" index="index" item="item"
+          open="(" separator="," close=")">
+          #{item.permissionId}
+        </foreach>
+      </if>
+      <if test="listN != null and listN.size>0 ">
+        and navigation_id in
+        <foreach collection="listN" index="index" item="item"
+          open="(" separator="," close=")">
+          #{item.navigationId}
+        </foreach>
+      </if>
+    </where>
+  </delete>
+</mapper>

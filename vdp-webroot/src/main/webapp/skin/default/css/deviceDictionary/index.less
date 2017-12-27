@@ -1,0 +1,101 @@
+.content-box {
+    font-size: 14px;
+}
+
+.header-table {
+    table-layout: fixed;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.dict-box {
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+    .dict-table {
+        table-layout: fixed;
+        width: 100%;
+        th {
+            background: #EBEDED;
+        }
+        tbody tr:nth-child(even) {
+            background: #F7F9F9;
+        }
+        td {
+            .icon-error {
+                color: #9C9D9D;
+            }
+            .icon-check {
+                color: #10c7be;
+            }
+        }
+    }
+}
+
+tr {
+    td,
+    th {
+        border-right: 1px solid #E4E6E6;
+        height: 40px;
+        &:last-child {
+            border-right: none;
+        }
+        text-align: center;
+    }
+}
+
+.wind-label {
+    text-align: right;
+    width: 80px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.wind-input {
+    width: 290px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.wind-input-box {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: calc(~"100% - 100px");
+}
+
+.wind-textarea {
+    width: 290px;
+    display: inline-block;
+    vertical-align: top;
+    resize: none;
+    padding: 5px;
+}
+
+.field-item {
+    .icon-delete {
+        color: #10c7be;
+        cursor: pointer;
+        position: absolute;
+        left: 295px;
+        top: 26px;
+        &:hover {
+            color: darken(#10c7be, 10%);
+        }
+    }
+}
+
+.dynamic {
+    display: none;
+}
+
+.layui-layer-content .beauty-radio-label {
+    width: 56px;
+}

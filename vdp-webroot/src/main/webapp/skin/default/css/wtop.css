@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+/*rightpart  z-index 50*/
+
+#wcontent {
+    position: absolute;
+    width: auto;
+    /*left:240px*/
+    right: 0px;
+    height: 100%;
+    background-color: #eee;
+    z-index: 0;
+}
+
+#wcontenttopu {
+    position: absolute;
+    width: auto;
+    left: 52px;
+    right: 0px;
+    height: 100%;
+    z-index: 0;
+}
+
+#wtop {
+    height: 46px;
+    background-color: #FFF;
+    width: 100%;
+    position: relative;
+    z-index: 10000001;
+}
+
+#wtleft {
+    float: left;
+    width: 50%;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+#wtright {
+    float: right;
+}
+
+
+/*上方导航*/
+
+.nav-top {
+    float: left;
+    height: 46px;
+    background: #ffffff;
+    color: #999;
+    display: table;
+}
+
+.nav_search {
+    margin-left: 50px;
+    height: 60px;
+    float: left;
+    width: 100px;
+    outline: none;
+}
+
+.nav_search p {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.nav_search_img {
+    float: left;
+    margin-left: 50px;
+    margin-top: 22px;
+}
+
+.nav-topright {
+    float: right;
+    height: 46px;
+}
+
+.nav-topright>ul {
+    height: 50px;
+    display: block;
+}
+
+.nav-topright>ul>li {
+    height: 50px;
+    float: left;
+    font-size: 14px;
+    padding-right: 20px;
+}
+
+.nav-topright img {
+    margin-top: 13px;
+    margin-left: 20px;
+}
+
+
+/*图标弹出窗口*/
+
+.selectbluebtn {
+    float: left;
+    height: 34px;
+    cursor: pointer;
+}
+
+.btnname {
+    height: 34px;
+    text-align: left;
+    padding-left: 10px;
+    line-height: 34px;
+    color: #999;
+    float: left;
+    padding-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btnlistarrow1 {
+    position: absolute;
+    z-index: 150;
+    width: 17px;
+    height: 10px;
+    top: 11px;
+    left: 100px;
+    background-image: url(../images/btnlistarrow.png);
+    background-repeat: no-repeat;
+}
+
+.btnselector {
+    width: 130px;
+    position: absolute;
+    z-index: 140;
+    top: 34px;
+    padding-top: 20px;
+    left: -45px;
+    display: none;
+}
+
+.btnlistarrow {
+    position: absolute;
+    z-index: 150;
+    width: 30px;
+}
+
+.btnlistarrow ul li {
+    height: 45px;
+    margin-top: -10px;
+}
+
+.btnlistarrow ul li img {
+    margin-top: 20px;
+}
+
+.btnlistarrow ul a:hover {
+    color: #000;
+}
+
+ul.btnselectorlist {
+    border: 1px solid #efefef;
+    display: block;
+    background-color: #f9f9fb;
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+ul.btnselectorlist a:visited {
+    color: #6d6d6d;
+}
+
+ul.btnselectorlist li {
+    display: block;
+    height: 35px;
+    padding-left: 50px;
+    line-height: 35px;
+    color: #6d6d6d;
+}
+
+.grayon {
+    background: #EEE;
+}
+
+#facewindow {
+    display: none;
+    position: absolute;
+    z-index: 9010;
+    background-color: #e5e5e5;
+    width: 410px;
+    height: 140px;
+    top: 50px;
+    right: 50px;
+}
+
+.facell {
+    width: 50px;
+    height: 50px;
+    background-color: #FFFFFF;
+    margin-left: 15px;
+    float: left;
+    cursor: pointer;
+}
+
+.facellline {
+    margin-top: 8px;
+    width: 38px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #666666;
+    height: 8px;
+}
+
+.u-row {
+    padding: 10px 0;
+    font-size:14px;
+}
+
+.u-row .userinfo-label {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 0;
+    text-align:right;
+    width:100px;
+    vertical-align: middle;
+}
+
+
+.u-row input[type="text"],
+.u-row input[type="password"] {
+    box-sizing: border-box;
+    border: 1px solid #E5E5E5;
+    height: 32px;
+    width: 240px;
+    padding: 0 5px;
+}
+
+.u-row span {
+    height: 32px;
+    line-height: 32px;
+    width: 240px;
+    padding: 0 5px;
+    display: inline-block;
+}
+
+.u-row .label-box {
+    width: 120px;
+    text-align: right;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.u-row .check-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.u-row label,
+.u-row input,
+.u-row span {
+    vertical-align: middle;
+}
+
+.u-row label.error {
+    width: 120px;
+    text-align: left;
+    margin-left: 5px;
+    color: red;
+    font-size: 12px;
+}
+
+.u-row .readonly-input {
+    border: none !important;
+}
+
+.icon-huanfu {
+    color: #666666;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.skin-color {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.skin-color-blue {
+    background: #6CC0FF;
+}
+
+.skin-color-black {
+    background: black;
+}
+
+.skin-box li {
+    padding-left: 0 !important;
+    text-align: center;
+}
+
+.activedatalist {
+    background: #ccc !important;
+}
+
+.top-msg-box {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    background-image: url(../images/top-msg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.top-msg-box:hover {
+    background-image: url(../images/top-msg-hover.png);
+}
+.top-msg-hover{
+    background-image: url(../images/top-msg-hover.png);
+}
+
+.top-msg {
+    position: absolute;
+    height: 16px;
+    border-radius: 8px;
+    background: red;
+    display: inline-block;
+    top: 10px;
+    left: 30px;
+    font-size: 12px;
+    color: white;
+    padding: 0 5px;
+    line-height: 16px;
+    display: none;
+}
+
+.top-user-info {
+    display: inline-block;
+    height: 50px;
+    background-image: url(../images/top-user.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-left: 40px;
+    position: relative;
+}
+
+.top-user-info:hover {
+    background-image: url(../images/top-user-hover.png);
+}
+
+.top-user-info:hover .user-info-hover-box {
+    display: block;
+}
+
+.top-user-name {
+    line-height: 50px;
+    color: lightgray;
+}
+
+.top-user-info:hover .top-user-name {
+    color: #666;
+}
+
+.user-info-hover-box {
+    position: absolute;
+    width: 120px;
+    border: 1px solid #B6C0C7;
+    z-index: 100000;
+    background: white;
+    top: 50px;
+    right: 0;
+    display: none;
+    box-shadow: 4px 3px 5px 2px #ccc;
+}
+
+.user-info-hover-box:before {
+    content: url(../images/toptrangle.png);
+    position: absolute;
+    top: -15px;
+    right: 55px;
+}
+
+.user-info-hover-row {
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.user-info-hover-row i {
+    color: #56A9E8;
+}
+
+.user-info-hover-row span {
+    color: #666;
+}
+
+.user-info-hover-row:hover span {
+    color: #56A9E8;
+}

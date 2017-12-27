@@ -1,0 +1,14 @@
+@charset "utf-8";/*init*/
+*{margin:0px;padding:0px;}
+body{font-family:"Microsoft YaHei","SimHei","SimSun";}
+.clear{clear:both;}
+img{border:0px;}
+ul,li{list-style:none;}
+a{text-decoration:none;}
+.rltv{position:relative;z-index:10000;}
+.fl{float:left}
+.fr{float:right}
+select{font-family:"Microsoft YaHei","SimHei","SimSun";}
+input{font-family:"Microsoft YaHei","SimHei","SimSun";}
+input[type="checkbox"]{outline:none;}
+p{margin: 0px;}

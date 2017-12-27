@@ -1,0 +1,211 @@
+/*设备信息弹窗*/
+
+.wind-device {
+    font-size: 14px;
+    height: 100%;
+}
+
+.wind-nav {
+    float: left;
+    width: 120px;
+    height: 100%;
+    background: #EDEFEF;
+    .wind-nav-item {
+        display: inline-block;
+        width: 100%;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .wind-nav-item-active {
+        background: white;
+        color: #10c7be;
+    }
+}
+
+.wind-content {
+    padding: 10px;
+    margin-left: 120px;
+    overflow: auto;
+    height: 100%;
+    box-sizing: border-box;
+    .wind-content-item {
+        width: 50%;
+        float: left;
+        margin: 10px 0;
+    }
+    .wind-content-label {
+        display: inline-block;
+        width: 108px;
+        text-align: right;
+        vertical-align: middle;
+    }
+    .wind-content-input {
+        display: inline-block;
+        width: calc(~"100% - 190px");
+        vertical-align: middle;
+    }
+}
+
+
+/*设备信息弹窗结束*/
+
+
+/*批量导入弹窗*/
+
+.import-wind-top {
+    padding: 20px 50px;
+    font-size: 0;
+    .input-select-file {
+        display: inline-block;
+        vertical-align: middle;
+        width: 280px;
+        font-size: 14px;
+    }
+    .btn-browser {
+        outline: none;
+        border: 1px solid #E5E5E5;
+        padding: 0 20px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 14px;
+        background: white;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        box-sizing: border-box;
+        height: 30px;
+        border-left: none;
+    }
+}
+
+.import-detail-title {
+    line-height: 40px;
+    background: #F5F7F7;
+    text-indent: 20px;
+}
+
+.import-info-box {
+    padding: 20px 50px;
+    .import-info{
+        margin:3px 0;
+    }
+    .import-info-faild {
+        color: red;
+        margin-top:20px;
+    }
+    .btn-copy {
+        float: right;
+        margin: 20px 20px 0 0;
+    }
+}
+
+
+/*批量导入弹窗结束*/
+
+
+/*设备状态*/
+
+.status-mark {
+    display: inline-block;
+    line-height: 26px;
+    padding: 0 10px;
+    color: white;
+}
+
+.status-mark-verify {
+    background: #0BB8B4;
+}
+
+.status-mark-unverify {
+    background: #418BCB;
+}
+
+.status-mark-draft {
+    background: #9BC2EF;
+}
+
+
+/*设备状态结束*/
+
+
+/*radio*/
+
+.beauty-radio {
+    display: inline-block;
+    vertical-align: middle;
+    .beauty-radio-label {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        height: 20px;
+        padding-left: 25px;
+        &:before {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 0;
+            top: 0;
+            background: #E2E6E6;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        &:after {
+            content: " ";
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background: #10c7be;
+            border-radius: 50%;
+        }
+    }
+    input[type="radio"] {
+        display: none;
+        &:checked+.beauty-radio-label:after {
+            display: inline-block;
+        }
+    }
+}
+
+
+/*layer*/
+
+body .device-layer .layui-layer-btn .layui-layer-btn0 {
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+    border: 0;
+    background-color: #10c7be;
+    color: #fff;
+}
+
+body .device-layer .layui-layer-btn .layui-layer-btn1 {
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+    border: 0;
+    background-color: #10c7be;
+    color: #fff;
+}
+
+body .device-layer .layui-layer-btn .layui-layer-btn2 {
+    height: 32px;
+    width: 70px;
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+    border: 0;
+    background-color: #e1e6ec;
+    color: #333331;
+    text-align: center;
+}

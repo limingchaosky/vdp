@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.goldencis.vdp.core.dao.CPermissionDOMapper">
+
+  <select id="countPermission" resultType="java.lang.Integer"
+    parameterType="java.lang.String">
+    SELECT COUNT(*) FROM t_permission
+    <if test='searchstr != null'>
+      WHERE NAME LIKE CONCAT('%',#{searchstr},'%')
+    </if>
+  </select>
+
+  <select id="getPermissionList" resultType="cn.goldencis.vdp.core.entity.PermissionDO">
+    SELECT id,NAME,visible,remark,
+    (SELECT GROUP_CONCAT(tn.title) FROM
+    t_navigation tn LEFT JOIN t_permission_navigation tpn ON
+    tpn.navigation_id=tn.id WHERE tpn.permission_id=tp.id) nav,
+    (SELECT
+    GROUP_CONCAT(aiu.id_) FROM ACT_ID_USER aiu WHERE
+    tp.id=aiu.role_type)
+    user
+    FROM t_permission tp
+    <where>
+      <if test='searchstr != null'>
+        tp.NAME LIKE CONCAT('%',#{searchstr},'%')
+      </if>
+    </where>
+    <if test='startNum != null and pageSize != null'>
+      limit #{startNum},#{pageSize}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultType="cn.goldencis.vdp.core.entity.PermissionDO">
+    SELECT
+    id,name,visible,remark FROM t_permission
+    where id = #{sid}
+  </select>
+  <select id="selectList" resultType="cn.goldencis.vdp.core.entity.PermissionDO">
+    SELECT
+    id,NAME,visible,remark,(SELECT COUNT(*) FROM ACT_ID_USER d WHERE
+    d.role_type=t.id) userCount FROM t_permission t
+  </select>
+</mapper>

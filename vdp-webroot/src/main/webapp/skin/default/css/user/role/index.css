@@ -1,0 +1,168 @@
+/*右侧内容区*/
+.btn-edit-detail {
+  color: #92A7C5;
+  font-size: 26px;
+  vertical-align: text-bottom;
+  position: relative;
+  top: 7px;
+  cursor: pointer;
+}
+/*右侧内容区结束*/
+/*编辑角色表单*/
+.form-row {
+  padding: 5px 0;
+}
+.form-label {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  font-size: 14px;
+  padding-right: 10px;
+}
+.form-input {
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #E5E5E5;
+  padding: 0 5px;
+}
+.normal-input {
+  width: 250px;
+}
+.long-input {
+  width: 500px;
+}
+/*编辑角色表单结束*/
+/*内容区*/
+.navigation-level1 {
+  padding: 0 30px;
+  line-height: 36px;
+  font-size: 0;
+}
+.navigation-level2 {
+  padding: 0 86px;
+}
+.navigation-level3 {
+  padding: 0 130px;
+}
+.navigation-item {
+  height: 36px;
+  float: left;
+  line-height: 36px;
+  font-size: 0;
+  margin: 0 10px;
+}
+.navigation-item-tip {
+  color: #C3C3C3;
+  font-size: 14px;
+  line-height: 36px;
+  position: relative;
+  margin-left: 20px;
+  display: inline-block;
+  text-indent: 10px;
+}
+.navigation-item-tip:before {
+  content: " ";
+  display: inline-block;
+  background: #C3C3C3;
+  width: 1px;
+  position: absolute;
+  height: 16px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.navigation-label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 36px;
+}
+.navigation-box {
+  height: calc(100% - 95px);
+  overflow: auto;
+  border-bottom: 1px solid #E7E7E7;
+}
+.navigation-box .navigation-row:nth-child(odd) {
+  background: #F8F8FA;
+}
+.navigation-box .navigation-row:nth-child(even) {
+  background: white;
+}
+.navigation-icon {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  background-repeat: no-repeat;
+  background-position: center -23px;
+  vertical-align: middle;
+}
+.navigation-check {
+  display: inline-block;
+  vertical-align: middle;
+}
+/*内容区结束*/
+/*弹窗*/
+.wind-box {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+.wind-row {
+  padding: 10px 0;
+  position: relative;
+}
+.wind-label {
+  display: inline-block;
+  width: 70px;
+  text-align: right;
+  font-size: 14px;
+  padding-left: 5px;
+}
+.wind-input {
+  width: 220px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #E5E5E5;
+  padding: 0 5px;
+}
+.wind-remark {
+  width: 220px;
+  box-sizing: border-box;
+  border: 1px solid #E5E5E5;
+  padding: 0 5px;
+  resize: none;
+  vertical-align: text-top;
+}
+.wind-normal-input {
+  width: 200px;
+}
+.wind-long-input {
+  width: 430px;
+}
+.wind-top-search-box {
+  position: absolute;
+  right: 50px;
+  top: 3px;
+  width: 220px;
+  height: 30px;
+}
+.wind-top-search-box .wind-top-search-input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #CED0DA;
+  background: white;
+  padding-right: 25px;
+  display: block;
+}
+.wind-top-search-box .wind-top-search-icon {
+  position: absolute;
+  right: 3px;
+  top: 7px;
+  width: 20px;
+  height: 20px;
+  color: #BFCAD9;
+  cursor: pointer;
+}
+.layui-layer-title {
+  position: relative;
+}

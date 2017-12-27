@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <mapping path="/homepage/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/user/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/permission/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/department/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/group/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/system/templet/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/activiti/designArea/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/activitiTest/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/workOrder/submitWorkOrder/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/workOrder/pending/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/workOrder/allWorkOrder/completed/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/workOrder/allWorkOrder/unCompleted/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/workOrder/allWorkOrder/allCompleted/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/activitiFlow/deployed/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/report/degreeOfSatis/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/report/workType/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/report/workSummarize/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/knowledge/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/about/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/system/workType/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/openprocess/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/noprivileged/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/blank/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/noPermission/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/netconfig/netconfig" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/apkManager/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+    <mapping path="/clientUser/index" decorator="/WEB-INF/jsp/decorators/decorator.jsp"/>
+
+</sitemesh>

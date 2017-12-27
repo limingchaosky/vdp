@@ -1,0 +1,86 @@
+.content-box {
+  font-size: 14px;
+}
+.header-table {
+  table-layout: fixed;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.dict-box {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+}
+.dict-box .dict-table {
+  table-layout: fixed;
+  width: 100%;
+}
+.dict-box .dict-table th {
+  background: #EBEDED;
+}
+.dict-box .dict-table tbody tr:nth-child(even) {
+  background: #F7F9F9;
+}
+.dict-box .dict-table td .icon-error {
+  color: #9C9D9D;
+}
+.dict-box .dict-table td .icon-check {
+  color: #10c7be;
+}
+tr td,
+tr th {
+  border-right: 1px solid #E4E6E6;
+  height: 40px;
+  text-align: center;
+}
+tr td:last-child,
+tr th:last-child {
+  border-right: none;
+}
+.wind-label {
+  text-align: right;
+  width: 80px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.wind-input {
+  width: 290px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.wind-input-box {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: calc(100% - 100px);
+}
+.wind-textarea {
+  width: 290px;
+  display: inline-block;
+  vertical-align: top;
+  resize: none;
+  padding: 5px;
+}
+.field-item .icon-delete {
+  color: #10c7be;
+  cursor: pointer;
+  position: absolute;
+  left: 295px;
+  top: 26px;
+}
+.field-item .icon-delete:hover {
+  color: #0c9891;
+}
+.dynamic {
+  display: none;
+}
+.layui-layer-content .beauty-radio-label {
+  width: 56px;
+}

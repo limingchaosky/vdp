@@ -1,0 +1,249 @@
+.openwindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    width: 800px;
+    height: 630px;
+    margin-left: -400px;
+    margin-top: -315px;
+    background-color: #FFF;
+
+    -webkit-box-shadow: #e5e5e5 0px 0px 2px;
+    -moz-box-shadow: #e5e5e5 0px 0px 2px;
+    box-shadow: #e5e5e5 0px 0px 2px;
+
+}
+
+.openwindowback {
+    background-color: #333333;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.openwindowtitle {
+    background-color: #e5e5e5;
+    height: 54px;
+    width: 100%;
+}
+
+.openwindowtitlename {
+    line-height: 54px;
+    font-size: 16px;
+    padding-left: 15px;
+    float: left;
+}
+
+.openwindowcontent {
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 54px;
+    bottom: 70px;
+}
+
+.openwindowcontentnobottom {
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 54px;
+    bottom: 0px;
+}
+
+.openwindowcontentcenter {
+    width: 100%;
+
+    position: absolute;
+    top: 43px;
+    bottom: 70px;
+}
+
+.openwindowtitleclose {
+    float: right;
+    background-image: url(../../images/icons/pop-close.png);
+    width: 20px;
+    height: 20px;
+    margin-top: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.openwindowtitleclose:hover {
+    background-image: url(../../images/icons/pop-close-on.png);
+}
+
+.openwindowbtns {
+    width: 100%;
+    bottom: 0px;
+    height: 70px;
+    border-top: 1px solid #e5e5e5;
+    position: absolute;
+}
+
+.openwindowbtnscenter {
+    width: 130px;;
+    left: 50%;;
+    margin-left: -65px;
+    bottom: 0px;
+    height: 70px;
+    position: absolute;
+}
+
+.warningwin {
+    background-image: url(../../images/window/grayinfo.png);
+    height: 80px;
+    line-height: 80px;
+    padding-left: 120px;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+
+}
+
+.confirmwin {
+    background-image: url(../../images/window/grayok.png);
+    height: 45px;
+    padding-left: 80px;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+    padding-top: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.infowin {
+    background-image: url(../../images/window/grayinfo.png);
+    height: 45px;
+    padding-left: 80px;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+    padding-top: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.questionwin {
+    background-image: url(../../images/window/grayquestion.png);
+    height: 45px;
+    padding-left: 80px;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+    padding-top: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.tipbox {
+    position: fixed;
+    width: 444px;
+    height: 50px;
+    line-height: 50px;
+    left: 50%;
+    z-index: 9999;
+    margin-left: -222px;
+    margin-top: -25px;
+}
+
+.tipicon {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: 10px;
+}
+
+.tipwords {
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}
+
+/**/
+.successtip {
+    background-color: #abe7ed;
+    color: #29aac3;
+}
+
+.successtip .tipicon {
+    background-image: url(../../images/window/popup_success.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/**/
+.errortip {
+    background-color: #ffcdd1;
+    color: #e83c4b;
+}
+
+.errortip .tipicon {
+    background-image: url(../../images/window/popup_error.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/**/
+.infotip {
+    background-color: #e1ebf9;
+    color: #347ad5;
+}
+
+.infotip .tipicon {
+    background-image: url(../../images/window/popup_info.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.openloadingwindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 999999999999;
+    width: 800px;
+    height: 590px;
+    margin-left: -400px;
+    margin-top: -295px;
+}
+
+.openloadingwindowback {
+    background-color: #333;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999999999998;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.loadingimg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    float: left;
+}
+
+.loadingword {
+    float: left;
+    line-height: 50px;
+    height: 50px;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #FFF;
+}
